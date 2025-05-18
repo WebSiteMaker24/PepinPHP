@@ -1,33 +1,31 @@
-# PepinPHP version 3
+PepinPHP version 3
+PepinPHP est un framework PHP léger, modulaire, et simple à utiliser, basé sur le modèle HMVC (Hierarchical Model View Controller).
+Il facilite la gestion du routage, l'organisation des vues et modules, et permet une extension facile de vos projets web.
 
-PepinPHP est un framework PHP léger, modulaire, et simple à utiliser, basé sur le modèle HMVC (Hierarchical Model View Controller).  
-Il facilite la gestion du routage, l’organisation des vues et modules, et permet une extension facile de vos projets web.
+Table des matières
+Présentation
 
----
+Structure du projet
 
-## Table des matières
+Installation
 
-- Présentation  
-- Structure du projet  
-- Installation  
-- Configuration  
-- Utilisation  
-- Routage  
-- Contribution  
-- Contact  
-- Licence  
+Configuration
 
----
+Utilisation
 
-## Présentation
+Routage
 
-PepinPHP est conçu pour être minimaliste et efficace, idéal pour des projets PHP qui veulent garder un contrôle simple sur l’architecture HMVC.  
-Il inclut un système de routage via paramètres URL, un découpage clair des templates, et supporte l’envoi d’emails via PHPMailer.
+Contribution
 
----
+Contact
 
-## Structure du projet
+Licence
 
+Présentation
+PepinPHP est conçu pour être minimaliste et efficace, idéal pour des projets PHP qui veulent garder un contrôle simple sur l'architecture HMVC.
+Il inclut un système de routage via paramètres URL, un découpage clair des templates, et supporte l'envoi d'emails via PHPMailer.
+
+Structure du projet
 La racine du projet contient notamment ces fichiers et dossiers :
 
 /Autoload.php
@@ -39,47 +37,55 @@ La racine du projet contient notamment ces fichiers et dossiers :
 /src/
 /.env
 /README.md
+/public_html/public/ : dossier public accessible via le serveur web (CSS, JS, images, etc.)
 
-markdown
-Copier
-Modifier
+/src/ : code source PHP organisé selon l'architecture HMVC, séparant les modules indépendants (ex : gestion utilisateurs, compteur de visites) du noyau MVC principal (contrôleurs, modèles, vues).
+Chaque module contient sa propre logique métier (contrôleur et modèle) pour une meilleure modularité.
 
-- `/public_html/public/` : dossier public accessible via le serveur web (CSS, JS, images, etc.)  
-- `/src/` : code source PHP organisé selon l’architecture HMVC, séparant les modules indépendants (ex : gestion utilisateurs, compteur de visites) du noyau MVC principal (contrôleurs, modèles, vues).  
-Chaque module contient sa propre logique métier (contrôleur et modèle) pour une meilleure modularité.  
-- `/phpmailer/` : librairie PHPMailer pour l’envoi d’emails  
-- `url.php` : définitions des constantes d’URL utilisées pour le routage  
-- `sendmail.php` : gestion de l’envoi d’emails (configuration SMTP nécessaire)  
-- `.env` : fichier de configuration des variables d’environnement (non versionné)  
+/phpmailer/ : librairie PHPMailer pour l'envoi d'emails
 
----
+url.php : définitions des constantes d'URL utilisées pour le routage
 
-## Installation
+sendmail.php : gestion de l'envoi d'emails (configuration SMTP nécessaire)
 
-1. Cloner le dépôt sur votre serveur ou machine locale :
+.env : fichier de configuration des variables d'environnement (non versionné) contenant les paramètres de la base de données et autres configurations sensibles
 
-```bash
+Installation
+Cloner le dépôt sur votre serveur ou machine locale :
+
+bash
 git clone https://github.com/WebSiteMaker24/PEPINPHP.git
 Configurer votre serveur web pour pointer vers le dossier /public_html/public/ comme racine web (DocumentRoot).
 
-Copier le fichier .env.example en .env et configurer vos variables (base de données, SMTP, etc.).
+Copier le fichier .env.example en .env et configurer vos variables avec vos paramètres :
 
+# Configuration base de données
+DB_HOST=localhost
+DB_NAME=nom_de_votre_base
+DB_USER=utilisateur
+DB_PASS=votre_mot_de_passe
+
+# Configuration SMTP
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=votre_email@example.com
+SMTP_PASS=votre_mot_de_passe_smtp
+SMTP_SECURE=tls
+
+# Autres paramètres
+DEBUG_MODE=true
 Installer la base de données en exécutant le script PHP installDatabase.php si nécessaire.
 
 Configuration
 Configurer vos URLs dans url.php :
 
 php
-Copier
-Modifier
 define('URL_ACCUEIL', '?url=accueil');
 define('URL_CONTACT', '?url=contact');
 // Ajoutez vos routes ici
 Configurer les paramètres SMTP et informations entreprise dans sendmail.php :
 
 php
-Copier
-Modifier
 define('COMPANY_EMAIL', 'votre.email@exemple.com');
 define('SMTP_PASSWORD', 'votre_mdp_application_smtp');
 Complétez ce fichier avec vos identifiants SMTP (ex : Google API).
@@ -95,8 +101,6 @@ Routage
 Les routes sont définies dans src/control/ControlRoute.php dans la méthode route(). Exemple :
 
 php
-Copier
-Modifier
 switch($page) {
     case 'accueil':
         $page = '/src/view/navigation/accueil.php';
@@ -108,11 +112,9 @@ switch($page) {
     default:
         $page = '/src/view/navigation/404.php';
 }
-Les constantes d’URL sont dans url.php pour utilisation dans les liens :
+Les constantes d'URL sont dans url.php pour utilisation dans les liens :
 
 php
-Copier
-Modifier
 <a href="<?php echo URL_ACCUEIL; ?>">Accueil</a>
 Contribution
 Ce framework est open source. Toute contribution est la bienvenue via pull requests ou issues sur GitHub.
