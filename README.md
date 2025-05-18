@@ -1,135 +1,155 @@
-PepinPHP version 3
-PepinPHP est un framework PHP léger, modulaire, et simple à utiliser, basé sur le modèle HMVC (Hierarchical Model View Controller).
-Il facilite la gestion du routage, l'organisation des vues et modules, et permet une extension facile de vos projets web.
+# PepinPHP v3
 
-Table des matières
-Présentation
+**PepinPHP** est un framework PHP léger, modulaire et simple à utiliser, basé sur le modèle **HMVC** (Hierarchical Model View Controller).  
+Il facilite le routage, l’organisation des vues/modules, et l’envoi d’emails via PHPMailer.
 
-Structure du projet
+---
 
-Installation
+## Table des matières
 
-Configuration
+- [Présentation](#présentation)  
+- [Structure du projet](#structure-du-projet)  
+- [Installation](#installation)  
+- [Configuration](#configuration)  
+- [Utilisation](#utilisation)  
+- [Routage](#routage)  
+- [Contribution](#contribution)  
+- [Contact](#contact)  
+- [Licence](#licence)  
 
-Utilisation
+---
 
-Routage
+## Présentation
 
-Contribution
+Minimaliste et efficace, PepinPHP s'adresse aux projets PHP qui veulent garder un contrôle simple sur une architecture HMVC.  
 
-Contact
+Fonctionnalités principales :  
+- Routage via paramètres URL  
+- Découpage clair des templates  
+- Envoi d'emails avec PHPMailer  
 
-Licence
+---
 
-Présentation
-PepinPHP est conçu pour être minimaliste et efficace, idéal pour des projets PHP qui veulent garder un contrôle simple sur l'architecture HMVC.
-Il inclut un système de routage via paramètres URL, un découpage clair des templates, et supporte l'envoi d'emails via PHPMailer.
+## Structure du projet
 
-Structure du projet
-La racine du projet contient notamment ces fichiers et dossiers :
+/
+├── Autoload.php
+├── Bootstrap.php
+├── url.php
+├── sendmail.php
+├── phpmailer/
+├── public_html/
+│ └── public/ # Dossier public (CSS, JS, images, etc.)
+├── src/
+│ ├── control/ # Contrôleurs HMVC
+│ ├── model/ # Modèles
+│ └── view/ # Vues
+├── .env # Variables d'environnement (non versionnées)
+├── README.md
 
-/Autoload.php
-/Bootstrap.php
-/url.php
-/sendmail.php
-/phpmailer/
-/public_html/
-/src/
-/.env
-/README.md
-/public_html/public/ : dossier public accessible via le serveur web (CSS, JS, images, etc.)
+yaml
+Copier
+Modifier
 
-/src/ : code source PHP organisé selon l'architecture HMVC, séparant les modules indépendants (ex : gestion utilisateurs, compteur de visites) du noyau MVC principal (contrôleurs, modèles, vues).
-Chaque module contient sa propre logique métier (contrôleur et modèle) pour une meilleure modularité.
+---
 
-/phpmailer/ : librairie PHPMailer pour l'envoi d'emails
+## Installation
 
-url.php : définitions des constantes d'URL utilisées pour le routage
-
-sendmail.php : gestion de l'envoi d'emails (configuration SMTP nécessaire)
-
-.env : fichier de configuration des variables d'environnement (non versionné) contenant les paramètres de la base de données et autres configurations sensibles
-
-Installation
-Cloner le dépôt sur votre serveur ou machine locale :
-
-bash
+1. Cloner le dépôt :  
+```bash
 git clone https://github.com/WebSiteMaker24/PEPINPHP.git
-Configurer votre serveur web pour pointer vers le dossier /public_html/public/ comme racine web (DocumentRoot).
+Configurer votre serveur web pour que la racine pointe sur public_html/public/.
 
-Copier le fichier .env.example en .env et configurer vos variables avec vos paramètres :
+Copier .env.example en .env et configurer vos variables (obligatoire) :
 
-# Configuration base de données
+env
+Copier
+Modifier
+# Base de données
 DB_HOST=localhost
 DB_NAME=nom_de_votre_base
 DB_USER=utilisateur
 DB_PASS=votre_mot_de_passe
 
-# Configuration SMTP
+# SMTP
 SMTP_HOST=smtp.example.com
 SMTP_PORT=587
 SMTP_USER=votre_email@example.com
 SMTP_PASS=votre_mot_de_passe_smtp
 SMTP_SECURE=tls
 
-# Autres paramètres
+# Autres
 DEBUG_MODE=true
-Installer la base de données en exécutant le script PHP installDatabase.php si nécessaire.
+(Optionnel) Installer la base de données avec installDatabase.php.
+
+⚠️ L’application ne fonctionne pas sans un fichier .env configuré correctement.
 
 Configuration
-Configurer vos URLs dans url.php :
+Définir vos routes dans url.php :
 
 php
+Copier
+Modifier
 define('URL_ACCUEIL', '?url=accueil');
 define('URL_CONTACT', '?url=contact');
-// Ajoutez vos routes ici
-Configurer les paramètres SMTP et informations entreprise dans sendmail.php :
+// Ajouter vos routes ici
+Configurer SMTP dans sendmail.php :
 
 php
+Copier
+Modifier
 define('COMPANY_EMAIL', 'votre.email@exemple.com');
 define('SMTP_PASSWORD', 'votre_mdp_application_smtp');
-Complétez ce fichier avec vos identifiants SMTP (ex : Google API).
-
+// Compléter avec vos identifiants SMTP
 Utilisation
-Toutes les pages sont accessibles via le paramètre ?url=nom_de_la_page.
+Accéder aux pages via ?url=nom_de_la_page.
 
-Le routeur dans src/control/ControlRoute.php charge la vue correspondante selon ce paramètre.
+Le routeur (src/control/ControlRoute.php) charge la vue associée.
 
-Les templates header.php, navbar.php, et footer.php sont inclus automatiquement.
+Templates header.php, navbar.php, footer.php inclus automatiquement.
 
 Routage
-Les routes sont définies dans src/control/ControlRoute.php dans la méthode route(). Exemple :
+Exemple dans ControlRoute.php :
 
 php
-switch($page) {
+Copier
+Modifier
+switch ($page) {
     case 'accueil':
         $page = '/src/view/navigation/accueil.php';
         break;
     case 'contact':
         $page = '/src/view/navigation/contact.php';
         break;
-    // Ajouter vos routes ici
     default:
         $page = '/src/view/navigation/404.php';
 }
-Les constantes d'URL sont dans url.php pour utilisation dans les liens :
+Utiliser les constantes URL dans les liens :
 
 php
+Copier
+Modifier
 <a href="<?php echo URL_ACCUEIL; ?>">Accueil</a>
 Contribution
-Ce framework est open source. Toute contribution est la bienvenue via pull requests ou issues sur GitHub.
-Merci de respecter la structure et le style du projet pour faciliter la maintenance.
+Projet open source. Contributions via pull requests ou issues sur GitHub.
+Respecter la structure et le style pour faciliter la maintenance.
 
 Contact
-Pour toute question ou suggestion, contactez-moi via :
-
 Email : contact@websitemaker.fr
 
 GitHub : github.com/WebSiteMaker24
 
-Clone : git clone https://github.com/WebSiteMaker24/PepinPHP.git
+Clone :
 
+bash
+Copier
+Modifier
+git clone https://github.com/WebSiteMaker24/PepinPHP.git
 Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier LICENSE.
 
 PepinPHP — Simple, léger, modulaire.
+
+css
+Copier
+Modifier
