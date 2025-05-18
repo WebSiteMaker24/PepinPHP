@@ -7,14 +7,15 @@ Il facilite la gestion du routage, l’organisation des vues et modules, et perm
 
 ## Table des matières
 
-- [Présentation](#présentation)  
-- [Structure du projet](#structure-du-projet)  
-- [Installation](#installation)  
-- [Configuration](#configuration)  
-- [Utilisation](#utilisation)  
-- [Routage](#routage)  
-- [Contribution](#contribution)  
-- [Contact](#contact)  
+- Présentation  
+- Structure du projet  
+- Installation  
+- Configuration  
+- Utilisation  
+- Routage  
+- Contribution  
+- Contact  
+- Licence  
 
 ---
 
@@ -27,7 +28,7 @@ Il inclut un système de routage via paramètres URL, un découpage clair des te
 
 ## Structure du projet
 
-La racine du projet est le dossier contenant notamment ces fichiers et dossiers :
+La racine du projet contient notamment ces fichiers et dossiers :
 
 /Autoload.php
 /Bootstrap.php
@@ -36,36 +37,37 @@ La racine du projet est le dossier contenant notamment ces fichiers et dossiers 
 /phpmailer/
 /public_html/
 /src/
-.env
-README.md
+/.env
+/README.md
 
-yaml
+markdown
 Copier
 Modifier
 
-- **/public_html/public/** : dossier public accessible via le serveur web (CSS, JS, images, etc.)  
-- **/src/** : code source PHP organisé selon l’architecture HMVC, séparant les modules indépendants (ex : gestion utilisateurs, compteur de visites) du noyau MVC principal (contrôleurs, modèles, vues).  
-Chaque module contient sa propre logique métier (contrôleur et modèle) pour une meilleure modularité. 
-- **/phpmailer/** : librairie PHPMailer pour l’envoi d’emails  
-- **url.php** : définitions des constantes d’URL utilisées pour le routage  
-- **sendmail.php** : gestion de l’envoi d’emails (configuration SMTP nécessaire)  
-- **.env** : fichier de configuration des variables d’environnement (non versionné)
+- `/public_html/public/` : dossier public accessible via le serveur web (CSS, JS, images, etc.)  
+- `/src/` : code source PHP organisé selon l’architecture HMVC, séparant les modules indépendants (ex : gestion utilisateurs, compteur de visites) du noyau MVC principal (contrôleurs, modèles, vues).  
+Chaque module contient sa propre logique métier (contrôleur et modèle) pour une meilleure modularité.  
+- `/phpmailer/` : librairie PHPMailer pour l’envoi d’emails  
+- `url.php` : définitions des constantes d’URL utilisées pour le routage  
+- `sendmail.php` : gestion de l’envoi d’emails (configuration SMTP nécessaire)  
+- `.env` : fichier de configuration des variables d’environnement (non versionné)  
 
 ---
 
 ## Installation
 
-1. Cloner le dépôt sur votre serveur ou machine locale  
+1. Cloner le dépôt sur votre serveur ou machine locale :
+
 ```bash
 git clone https://github.com/WebSiteMaker24/PEPINPHP.git
-Configurer votre serveur web pour pointer vers le dossier /public_html/public/ comme racine web (DocumentRoot)
+Configurer votre serveur web pour pointer vers le dossier /public_html/public/ comme racine web (DocumentRoot).
 
-Copier le fichier .env.example en .env et configurer vos variables (base de données, SMTP, etc.)
+Copier le fichier .env.example en .env et configurer vos variables (base de données, SMTP, etc.).
 
-Installer la base de données en exécutant le script PHP installDatabase.php si nécessaire
+Installer la base de données en exécutant le script PHP installDatabase.php si nécessaire.
 
 Configuration
-Configurez vos URLs dans url.php :
+Configurer vos URLs dans url.php :
 
 php
 Copier
@@ -73,21 +75,21 @@ Modifier
 define('URL_ACCUEIL', '?url=accueil');
 define('URL_CONTACT', '?url=contact');
 // Ajoutez vos routes ici
-Paramètres SMTP et informations entreprise dans un fichier de configuration à compléter (exemple) :
+Configurer les paramètres SMTP et informations entreprise dans sendmail.php :
 
 php
 Copier
 Modifier
 define('COMPANY_EMAIL', 'votre.email@exemple.com');
 define('SMTP_PASSWORD', 'votre_mdp_application_smtp');
-Pour l’envoi d’emails, complétez sendmail.php avec vos identifiants SMTP (ex: Google API)
+Complétez ce fichier avec vos identifiants SMTP (ex : Google API).
 
 Utilisation
-Toutes les pages sont accessibles via le paramètre ?url=nom_de_la_page
+Toutes les pages sont accessibles via le paramètre ?url=nom_de_la_page.
 
-Le routeur dans ControlRoute.php charge la vue correspondante selon ce paramètre
+Le routeur dans src/control/ControlRoute.php charge la vue correspondante selon ce paramètre.
 
-Les templates header.php, navbar.php, et footer.php sont inclus automatiquement
+Les templates header.php, navbar.php, et footer.php sont inclus automatiquement.
 
 Routage
 Les routes sont définies dans src/control/ControlRoute.php dans la méthode route(). Exemple :
@@ -119,9 +121,9 @@ Merci de respecter la structure et le style du projet pour faciliter la maintena
 Contact
 Pour toute question ou suggestion, contactez-moi via :
 
-Email : greystormwebmaster@gmail.com
+Email : contact@websitemaker.fr
 
-GitHub : https://github.com/WebSiteMaker24
+GitHub : github.com/WebSiteMaker24
 
 Licence
 Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
