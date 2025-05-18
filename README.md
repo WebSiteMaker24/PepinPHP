@@ -123,7 +123,7 @@ Pour toute question ou suggestion, contactez-moi via :
 
 Email : contact@websitemaker.fr
 
-GitHub : github.com/WebSiteMaker24
+GitHub : git clone github.com/WebSiteMaker24
 
 Clone : https://github.com/WebSiteMaker24/PepinPHP.git
 
