@@ -34,6 +34,7 @@ Fonctionnalités principales :
 PepinPHP v3 - Structure simplifiée
 
 PepinPHP
+PepinPHP
 ├─ .env
 ├─ Autoload.php
 ├─ Bootstrap.php
@@ -96,6 +97,7 @@ PepinPHP
          ├─ footer.php
          ├─ header.php
          └─ navbar.php
+
 
 ---
 
