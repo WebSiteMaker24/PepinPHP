@@ -105,7 +105,7 @@ PepinPHP
 
 1. Cloner le dépôt :  
 
-git clone https://github.com/WebSiteMaker24/PEPINPHP.git
+git clone https://github.com/WebSiteMaker24/PepinPHP.git
 Configurer votre serveur web pour que la racine pointe sur public_html/public/.
 
 Copier env.txt en .env et configurer vos variables (obligatoire) :
@@ -141,16 +141,37 @@ Routage
 Exemple dans ControlRoute.php :
 
 switch ($page) {
-    case 'accueil':
-        $page = '/src/view/navigation/accueil.php';
-        break;
-    case 'contact':
-        $page = '/src/view/navigation/contact.php';
-        break;
-    default:
-        $page = '/src/view/navigation/404.php';
+            case '':
+                $keyword = "PepinPHP, framework PHP, accueil";
+                $description = "Bienvenue sur PepinPHP, un framework PHP léger et modulaire. Découvrez comment démarrer rapidement.";
+                $canonical = "/accueil";
+                $title = "Accueil - PepinPHP";
+                $page = '/src/view/navigation/accueil.php';
+                break;
+            case 'accueil':
+                $keyword = "PepinPHP, framework PHP, accueil";
+                $description = "Bienvenue sur PepinPHP, un framework PHP léger et modulaire. Découvrez comment démarrer rapidement.";
+                $canonical = "/accueil";
+                $title = "Accueil - PepinPHP";
+                $page = '/src/view/navigation/accueil.php';
+                break;
+            case 'contact':
+                $keyword = "contact, support, PepinPHP, aide";
+                $description = "Page de contact de PepinPHP. Pour toute question ou support, contactez-nous.";
+                $canonical = "/contact";
+                $title = "Contact - PepinPHP";
+                $page = '/src/view/navigation/contact.php';
+                break;
+            default:  // 404
+                $keyword = "erreur 404, page non trouvée, PepinPHP";
+                $description = "La page demandée n'existe pas ou a été déplacée.";
+                $canonical = "/404";
+                $title = "Erreur 404 - Page non trouvée - PepinPHP";
+                $page = '/src/view/navigation/404.php';
+                break;
 }
-Utiliser les constantes URL dans les liens :
+
+Utiliser les constantes URL présente dans le fichier url.php dans les liens :
 
 <a href="<?php echo URL_ACCUEIL; ?>">Accueil</a>
 Contribution
@@ -162,11 +183,9 @@ Email : contact@websitemaker.fr
 
 GitHub : github.com/WebSiteMaker24
 
-Clone :
+Clone : git clone https://github.com/WebSiteMaker24/PepinPHP.git
 
-git clone https://github.com/WebSiteMaker24/PepinPHP.git
-Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE.
+Licence : Ce projet est sous licence MIT. Voir le fichier LICENSE.
 
 PepinPHP — Simple, léger, modulaire.
 
