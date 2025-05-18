@@ -31,76 +31,108 @@ Fonctionnalités principales :
 ---
 
 ## Structure du projet
+PepinPHP v3 - Structure simplifiée
 
-/
-├── Autoload.php
-├── Bootstrap.php
-├── url.php
-├── sendmail.php
-├── phpmailer/
-├── public_html/
-│ └── public/ # Dossier public (CSS, JS, images, etc.)
-├── src/
-│ ├── control/ # Contrôleurs HMVC
-│ ├── model/ # Modèles
-│ └── view/ # Vues
-├── .env # Variables d'environnement (non versionnées)
-├── README.md
+PepinPHP
+│   .env
+│   Autoload.php
+│   Bootstrap.php
+│   installDatabase.php
+│   LICENCE.txt
+│   pastille_couleur.txt
+│   README.md
+│   sendmail.php
+│   url.php
+│
+├── phpmailer
+│   ├── Exception.php
+│   ├── PHPMailer.php
+│   └── SMTP.php
+│
+├── public_html
+│   ├── favicon.ico
+│   ├── favicon.png
+│   ├── htaccess.txt
+│   ├── index.php
+│   └── public
+│       ├── css
+│       │   ├── style.css
+│       ├── font
+│       │   ├── Poppins-BlackItalic.ttf
+│       │   ├── Poppins-Italic.ttf
+│       │   ├── Poppins-Light.ttf
+│       │   └── Poppins-Regular.ttf
+│       ├── img
+│       │   ├── banner.avif
+│       │   └── PepinPHP.png
+│       └── js
+│           ├── jquery.min.js
+│           └── script.js
+│
+└── src
+    ├── control
+    │   ├── ControlForm.php
+    │   ├── ControlMain.php
+    │   └── ControlRoute.php
+    ├── csrf
+    │   └── CSRFProtection.php
+    ├── handlerform
+    │   └── HandlerForm.php
+    ├── middleware
+    │   └── Middleware.php
+    ├── model
+    │   ├── Database.php
+    │   └── EnvLoader.php
+    ├── module
+    │   ├── comptevisit
+    │   │   ├── ControlVisit.php
+    │   │   └── ModelVisit.php
+    │   └── users
+    │       ├── ControlUser.php
+    │       └── ModelUser.php
+    └── view
+        ├── navigation
+        │   ├── 404.php
+        │   ├── accueil.php
+        │   └── contact.php
+        └── template
+            ├── footer.php
+            ├── header.php
+            └── navbar.php
 
-yaml
-Copier
-Modifier
+
 
 ---
 
 ## Installation
 
 1. Cloner le dépôt :  
-```bash
+
 git clone https://github.com/WebSiteMaker24/PEPINPHP.git
 Configurer votre serveur web pour que la racine pointe sur public_html/public/.
 
-Copier .env.example en .env et configurer vos variables (obligatoire) :
+Copier env.txt en .env et configurer vos variables (obligatoire) :
 
-env
-Copier
-Modifier
 # Base de données
 DB_HOST=localhost
 DB_NAME=nom_de_votre_base
 DB_USER=utilisateur
 DB_PASS=votre_mot_de_passe
 
-# SMTP
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_USER=votre_email@example.com
-SMTP_PASS=votre_mot_de_passe_smtp
-SMTP_SECURE=tls
-
-# Autres
-DEBUG_MODE=true
-(Optionnel) Installer la base de données avec installDatabase.php.
-
 ⚠️ L’application ne fonctionne pas sans un fichier .env configuré correctement.
 
 Configuration
 Définir vos routes dans url.php :
 
-php
-Copier
-Modifier
 define('URL_ACCUEIL', '?url=accueil');
 define('URL_CONTACT', '?url=contact');
 // Ajouter vos routes ici
 Configurer SMTP dans sendmail.php :
 
-php
-Copier
-Modifier
 define('COMPANY_EMAIL', 'votre.email@exemple.com');
 define('SMTP_PASSWORD', 'votre_mdp_application_smtp');
 // Compléter avec vos identifiants SMTP
+
 Utilisation
 Accéder aux pages via ?url=nom_de_la_page.
 
@@ -111,9 +143,6 @@ Templates header.php, navbar.php, footer.php inclus automatiquement.
 Routage
 Exemple dans ControlRoute.php :
 
-php
-Copier
-Modifier
 switch ($page) {
     case 'accueil':
         $page = '/src/view/navigation/accueil.php';
@@ -126,9 +155,6 @@ switch ($page) {
 }
 Utiliser les constantes URL dans les liens :
 
-php
-Copier
-Modifier
 <a href="<?php echo URL_ACCUEIL; ?>">Accueil</a>
 Contribution
 Projet open source. Contributions via pull requests ou issues sur GitHub.
@@ -141,15 +167,9 @@ GitHub : github.com/WebSiteMaker24
 
 Clone :
 
-bash
-Copier
-Modifier
 git clone https://github.com/WebSiteMaker24/PepinPHP.git
 Licence
 Ce projet est sous licence MIT. Voir le fichier LICENSE.
 
 PepinPHP — Simple, léger, modulaire.
 
-css
-Copier
-Modifier
