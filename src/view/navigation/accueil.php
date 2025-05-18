@@ -97,6 +97,22 @@ define('URL_CONTACT', '?url=contact');
             puis <code>footer.php</code>.</li>
         <li>Les modules sont dans <code>/src/module/</code>, les vues dans <code>/src/view/</code>.</li>
     </ul>
+    <h2>Configuration du fichier <code>.env</code></h2>
+    <div style="border: 1px solid #cc0000; background-color: #fff0f0; padding: 15px; border-radius: 5px;">
+        <strong>⚠️ Important :</strong> Le fichier <code>.env</code> doit impérativement être configuré pour que
+        l'application fonctionne correctement, notamment pour la base de données et l'envoi d'e-mails.
+    </div>
+
+    <ol>
+        <li>Ouvrez le fichier <code>.env</code> et remplissez les informations nécessaires :</li>
+    </ol>
+
+    <pre><code># Base de données
+    DB_HOST=localhost
+    DB_NAME=pepinphp
+    DB_USER=root
+    DB_PASSWORD=root
+    </code></pre>
 
     <h2>Ajouter une nouvelle page</h2>
     <p>Pour ajouter une nouvelle page accessible via l'URL <code>?url=nouvellepage</code>, suivez ces étapes :</p>
