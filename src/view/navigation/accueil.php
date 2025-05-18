@@ -158,6 +158,4 @@ define('URL_CONTACT', '?url=contact');
                 .catch(() => alert('❌ Erreur lors de la copie'));
         }
     </script>
-
-    </p>
 </div>
