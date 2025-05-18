@@ -33,7 +33,7 @@ Fonctionnalités principales :
 ## Structure du projet
 PepinPHP v3 - Structure simplifiée
 
-PepinPHP
+```
 PepinPHP
 ├─ .env
 ├─ Autoload.php
@@ -97,7 +97,7 @@ PepinPHP
          ├─ footer.php
          ├─ header.php
          └─ navbar.php
-
+```
 
 ---
 
