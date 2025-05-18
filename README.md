@@ -140,6 +140,7 @@ Templates header.php, navbar.php, footer.php inclus automatiquement.
 Routage
 Exemple dans ControlRoute.php :
 
+```
 switch ($page) {
             case '':
                 $keyword = "PepinPHP, framework PHP, accueil";
@@ -170,7 +171,7 @@ switch ($page) {
                 $page = '/src/view/navigation/404.php';
                 break;
 }
-
+```
 Utiliser les constantes URL présente dans le fichier url.php dans les liens :
 
 <a href="<?php echo URL_ACCUEIL; ?>">Accueil</a>
