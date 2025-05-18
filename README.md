@@ -1,4 +1,4 @@
-# PepinPHP
+# PepinPHP version 3
 
 PepinPHP est un framework PHP léger, modulaire, et simple à utiliser, basé sur le modèle HMVC (Hierarchical Model View Controller).  
 Il facilite la gestion du routage, l’organisation des vues et modules, et permet une extension facile de vos projets web.
