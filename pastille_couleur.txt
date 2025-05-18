@@ -1,0 +1,27 @@
+🟥 Rouge
+🟧 Orange
+🟨 Jaune
+🟩 SECURITE
+🟢 Vert foncé
+🟦 Bleu clair
+🔵 Bleu foncé
+🟪 Violet
+🟫 Marron
+⬛ Noir
+⬜ Blanc
+🔴 Rouge plein
+🟠 Orange plein
+🟡 Jaune plein
+🟤 Marron clair
+⚫ Noir plein
+⚪ Blanc plein
+🧡 Cœur orange (pour l’affectif 🧡)
+💙 Cœur bleu
+💚 Cœur vert
+🌈 Arc en ciel
+🔒 7. Headers de sécurité manquants
+
+
+Gerer l'autoload
+Refaire le bootstrap
+Tout doit être rangé nickel bordel de merde
