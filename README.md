@@ -34,73 +34,68 @@ Fonctionnalités principales :
 PepinPHP v3 - Structure simplifiée
 
 PepinPHP
-│   .env
-│   Autoload.php
-│   Bootstrap.php
-│   installDatabase.php
-│   LICENCE.txt
-│   pastille_couleur.txt
-│   README.md
-│   sendmail.php
-│   url.php
-│
-├── phpmailer
-│   ├── Exception.php
-│   ├── PHPMailer.php
-│   └── SMTP.php
-│
-├── public_html
-│   ├── favicon.ico
-│   ├── favicon.png
-│   ├── htaccess.txt
-│   ├── index.php
-│   └── public
-│       ├── css
-│       │   ├── style.css
-│       ├── font
-│       │   ├── Poppins-BlackItalic.ttf
-│       │   ├── Poppins-Italic.ttf
-│       │   ├── Poppins-Light.ttf
-│       │   └── Poppins-Regular.ttf
-│       ├── img
-│       │   ├── banner.avif
-│       │   └── PepinPHP.png
-│       └── js
-│           ├── jquery.min.js
-│           └── script.js
-│
-└── src
-    ├── control
-    │   ├── ControlForm.php
-    │   ├── ControlMain.php
-    │   └── ControlRoute.php
-    ├── csrf
-    │   └── CSRFProtection.php
-    ├── handlerform
-    │   └── HandlerForm.php
-    ├── middleware
-    │   └── Middleware.php
-    ├── model
-    │   ├── Database.php
-    │   └── EnvLoader.php
-    ├── module
-    │   ├── comptevisit
-    │   │   ├── ControlVisit.php
-    │   │   └── ModelVisit.php
-    │   └── users
-    │       ├── ControlUser.php
-    │       └── ModelUser.php
-    └── view
-        ├── navigation
-        │   ├── 404.php
-        │   ├── accueil.php
-        │   └── contact.php
-        └── template
-            ├── footer.php
-            ├── header.php
-            └── navbar.php
-
-
+├─ .env
+├─ Autoload.php
+├─ Bootstrap.php
+├─ installDatabase.php
+├─ LICENCE.txt
+├─ pastille_couleur.txt
+├─ README.md
+├─ sendmail.php
+├─ url.php
+├─ phpmailer
+│  ├─ Exception.php
+│  ├─ PHPMailer.php
+│  └─ SMTP.php
+├─ public_html
+│  ├─ favicon.ico
+│  ├─ favicon.png
+│  ├─ htaccess.txt
+│  ├─ index.php
+│  └─ public
+│     ├─ css
+│     │  └─ style.css
+│     ├─ font
+│     │  ├─ Poppins-BlackItalic.ttf
+│     │  ├─ Poppins-Italic.ttf
+│     │  ├─ Poppins-Light.ttf
+│     │  └─ Poppins-Regular.ttf
+│     ├─ img
+│     │  ├─ banner.avif
+│     │  └─ PepinPHP.png
+│     └─ js
+│        ├─ jquery.min.js
+│        └─ script.js
+└─ src
+   ├─ control
+   │  ├─ ControlForm.php
+   │  ├─ ControlMain.php
+   │  └─ ControlRoute.php
+   ├─ csrf
+   │  └─ CSRFProtection.php
+   ├─ handlerform
+   │  └─ HandlerForm.php
+   ├─ middleware
+   │  └─ Middleware.php
+   ├─ model
+   │  ├─ Database.php
+   │  └─ EnvLoader.php
+   ├─ module
+   │  ├─ comptevisit
+   │  │  ├─ ControlVisit.php
+   │  │  └─ ModelVisit.php
+   │  └─ users
+   │     ├─ ControlUser.php
+   │     └─ ModelUser.php
+   └─ view
+      ├─ navigation
+      │  ├─ 404.php
+      │  ├─ accueil.php
+      │  └─ contact.php
+      └─ template
+         ├─ footer.php
+         ├─ header.php
+         └─ navbar.php
 
 ---
 
