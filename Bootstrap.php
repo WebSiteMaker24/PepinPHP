@@ -32,9 +32,9 @@ class Bootstrap
         $csrfProtection = new CSRFProtection();
         $csrfProtection->generateToken();
 
-        // 👤 Module utilisateur - enregistrement des visites
-        $visitControl = new \module\comptevisit\ControlVisit();
-        $visitControl->enregistrerVisite();
+        // 👤 Module utilisateur - enregistrement des visites (La base de données doit être connectée avant utilisation)
+        // $visitControl = new \module\comptevisit\ControlVisit();
+        // $visitControl->enregistrerVisite();
 
         // 🚦 Récupération de l'URL demandée (routeur)
         $url = $_GET['url'] ?? 'accueil';
