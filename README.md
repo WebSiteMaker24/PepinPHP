@@ -100,10 +100,9 @@ git clone https://github.com/WebSiteMaker24/PepinPHPv5.git
 3. Copier `env.txt` en `.env` et le configurer :
 
 ```env
-DB_HOST=localhost
-DB_NAME=pepinphp
-DB_USER=root
-DB_PASS=motdepasse
+SMTP_PASSWORD=
+CAPTCHA_KEY=
+CAPTCHA_SECRET=
 ```
 
 4. C'est prêt. Vous pouvez accéder au site.
@@ -112,7 +111,7 @@ DB_PASS=motdepasse
 
 ## Configuration
 
-Tout est centralisé dans `core/constantes.php` :
+Tout est centralisé dans `core/Constantes.php` :
 
 ```php
 define('URL_PREFIX', '?url='); // En local
@@ -124,13 +123,6 @@ define('URL_CONTACT', URL_PREFIX . 'contact');
 // Infos entreprise
 define('NOM_ENTREPRISE', 'WebSiteMaker');
 define('EMAIL_ENTREPRISE', 'contact@websitemaker.fr');
-
-// SMTP
-define('SMTP_HOST', 'smtp.exemple.com');
-define('SMTP_PORT', 465);
-define('SMTP_SECURE', 'ssl');
-define('SMTP_USERNAME', 'contact@websitemaker.fr');
-define('SMTP_PASSWORD', 'votre_mot_de_passe');
 ```
 
 ---
@@ -150,7 +142,7 @@ Utilisez toujours les constantes `URL_...` dans vos vues pour simplifier la main
 
 Un fichier `sendmail.php` prêt à l'emploi utilise **PHPMailer** pour envoyer des emails via SMTP.
 
-- Toutes les constantes SMTP sont déjà définies dans `core/constantes.php` → aucune configuration supplémentaire n'est requise.
+- Toutes les constantes SMTP sont déjà définies dans `core/Constantes.php` → aucune configuration supplémentaire n'est requise.
 - Le template HTML de l'email se trouve dans `view/form/contact_form.php`
 - Vous pouvez personnaliser les couleurs ou la charte graphique dans ce fichier.
 - Si vous voulez ajouter ou retirer un champ du formulaire, modifiez simplement `sendmail.php` et le template associé.
