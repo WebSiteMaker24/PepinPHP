@@ -40,7 +40,7 @@ if (!defined('URL_DOMAINE_TXT'))
 if (!defined('COMPANY_EMAIL'))
     define('COMPANY_EMAIL', '');
 if (!defined('COMPANY_EMAIL_SMTP'))
-    define('COMPANY_EMAIL_SMTP', 'greystormwebmaster@gmail.com');
+    define('COMPANY_EMAIL_SMTP', '');
 
 if (!defined('COMPANY_NAME'))
     define('COMPANY_NAME', 'PepinPHP');
