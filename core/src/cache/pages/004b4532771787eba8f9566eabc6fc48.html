@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- site toujours en developpement, bonne visite ! -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" href="https:///contact" hreflang="fr">
+    <link rel="alternate" href="https:///contact" hreflang="x-default">
+
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+
+    <meta name="author" content="PepinPHP">
+    <meta name="phone" content="">
+    <meta name="email" content="">
+    <meta name="address" content="">
+    <meta name="robots" content="index, follow">
+
+    <meta name="geo.placename" content="">
+    <meta name="geo.region" content="">
+    <meta name="geo.position" content="">
+
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:///contact">
+    <meta property="og:title" content="Contactez nous | PepinPHP">
+    <meta property="og:image" content="public/img/og_img.webp">
+    <meta property="og:locale" content="fr">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https:///contact">
+    <meta name="ICBM" content="43.0650046,0.1495378">
+
+    <title>Contactez nous | PepinPHP</title>
+
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PepinPHP",
+    "image": "public/img/og_img.webp",
+    "telephone": "",
+    "email": "",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "postalCode": "",
+        "addressCountry": "FR"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "",
+        "longitude": ""
+    },
+    "url": "https:///contact",
+    "sameAs": [
+        "#",
+        "#"
+    ],
+    "description": "",
+    "logo": "public/img/logo.png",
+    "priceRange": ""
+}    </script>
+
+</head>
+
+<body><style>
+    nav {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--color-primary-strong);
+        z-index: 999;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li.logo {
+        margin-right: auto;
+        padding-left: 20px;
+    }
+
+    nav ul li.logo a img {
+        height: 50px;
+        display: block;
+    }
+
+    nav ul li a {
+        padding: 15px 25px;
+        display: block;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+<nav>
+    <ul>
+        <li class="logo">
+            <a href="/">
+                <img src="public/img/logo.png" alt="Logo PepinPHP" class="logo">
+            </a>
+        </li>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="?url=contact">Contact</a></li>
+    </ul>
+</nav><!-- src/view/navigation/contact.php -->
+
+<div class="container">
+    <h1>Contactez WebSiteMaker</h1>
+    <p>Pour toute question ou suggestion d'amélioration, vous pouvez me contacter via :</p>
+        <div class="info-block">
+        <p><strong>Email :</strong> <a href="mailto:contact@websitemaker.fr">contact@websitemaker.fr</a></p>
+        <p><strong>GitHub :</strong> <a href="https://github.com/WebSiteMaker24" target="_blank"
+                rel="noopener noreferrer">github.com/WebSiteMaker24</a></p>
+    </div>
+
+    <h2>À propos du formulaire de contact</h2>
+    <p>
+        Un fichier <code>sendmail.php</code> est prévu avec <code>PHPMailer</code> pour envoyer des emails via SMTP.
+        Toutes les constantes nécessaires sont déjà définies dans le fichier <code>core/Constantes.php</code>,
+        donc <code>sendmail.php</code> n’a pas besoin d’être configuré, sauf si vous souhaitez ajouter ou retirer
+        un champ dans le formulaire.
+    </p>
+    <p>
+        Le contenu HTML de l’email envoyé est défini dans le fichier <code>view/form/contact_form.php</code>,
+        qui sert de modèle (template) pour le message. Vous pouvez facilement y adapter les couleurs, polices ou
+        éléments visuels selon votre charte graphique.
+    </p>
+    <p style="font-style: italic; color: #7f8c8d;">
+        Créez le mot de passe dans votre console Google si vous utilisez Gmail, avec l’authentification à deux facteurs
+        activée.
+    </p>
+    <a href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener noreferrer">Votre mot de passe
+        SMTP GMAIL</a>
+
+    <form method="post">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <input type="tel" name="phone" placeholder="Votre téléphone" required>
+        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+
+        <script>
+            (() => {
+                const form = document.querySelector('form');
+                if (!form) {
+                    console.error('Formulaire introuvable pour reCAPTCHA.');
+                    return;
+                }
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    const oldToken = form.querySelector('input[name="g-recaptcha-response"]');
+                    if (oldToken) oldToken.remove();
+                    grecaptcha.ready(() => {
+                        grecaptcha.execute('', {
+                            action: 'formulaire'
+                        })
+                            .then(token => {
+                                if (!token) {
+                                    alert(
+                                        'Impossible de valider le formulaire. Veuillez réessayer.'
+                                    );
+                                    return;
+                                }
+                                const input = document.createElement('input');
+                                input.type = 'hidden';
+                                input.name = 'g-recaptcha-response';
+                                input.value = token;
+                                form.appendChild(input);
+                                form.submit();
+                            })
+                            .catch(() => {
+                                alert(
+                                    'Erreur lors de la validation reCAPTCHA. Veuillez rafraîchir la page et réessayer.'
+                                );
+                            });
+                    });
+                });
+            })();
+        </script>
+
+        <input type="hidden" value="contact_form" name="action">
+        <input type="hidden" name="csrf_token" value="9a000ae2f3b49bc61b7653077e1ddee9c6bc52c5eed1f10f646e72a85da34716">
+        <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <h2>Fonctionnement du formulaire</h2>
+    <p>
+        Le formulaire est protégé contre les envois frauduleux grâce à deux mécanismes de sécurité :
+    </p>
+    <ul>
+        <li><strong>🛡️ Jeton CSRF (Cross Site Request Forgery)</strong> : un jeton unique est généré à chaque
+            chargement de page et ajouté automatiquement dans le formulaire via :
+            <br><code>&lt;input type="hidden" name="csrf_token" value="..."&gt;</code>
+            <br>Ce jeton est ensuite vérifié côté serveur lors de la soumission du formulaire.
+        </li>
+        <li><strong>✅ Google reCAPTCHA v3</strong> : le formulaire utilise l’API invisible de Google pour évaluer
+            automatiquement si la soumission est faite par un humain.
+            <br>Un jeton reCAPTCHA est généré côté client via :
+            <br><code>grecaptcha.execute(...)</code> puis ajouté dynamiquement avant l’envoi du formulaire.
+        </li>
+    </ul>
+
+    <h3>📥 Données envoyées</h3>
+    <p>Lors de la soumission, le formulaire envoie les champs suivants au serveur :</p>
+    <ul>
+        <li><code>name</code> – le nom de l’utilisateur</li>
+        <li><code>email</code> – l’adresse email</li>
+        <li><code>phone</code> – le numéro de téléphone</li>
+        <li><code>message</code> – le contenu du message</li>
+        <li><code>csrf_token</code> – jeton de sécurité contre les attaques CSRF</li>
+        <li><code>g-recaptcha-response</code> – jeton généré par Google reCAPTCHA</li>
+        <li><code>action</code> – identifiant du formulaire (ici <code>contact_form</code>)</li>
+    </ul>
+
+    <h3>🔐 Traitement côté serveur</h3>
+    <p>Le fichier PHP qui traite le formulaire :</p>
+    <ul>
+        <li>Vérifie la validité du jeton CSRF.</li>
+        <li>Valide le token reCAPTCHA en appelant l’API Google avec une clé secrète.</li>
+        <li>Vérifie les champs obligatoires et la validité des formats.</li>
+        <li>Si tout est valide : envoie l’email via <code>PHPMailer</code> (ou enregistre en base selon configuration).
+        </li>
+        <li><strong>Gère l’envoi via le fichier <code>sendmail.php</code> qui utilise la bibliothèque
+                <code>PHPMailer</code></strong> pour envoyer le message par email via SMTP.</li>
+        <li>Affiche ensuite un message flash (succès ou erreur) avec <code>ControlMain::message_flash()</code>.</li>
+    </ul>
+
+</div>
+
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            const badge = document.querySelector('.grecaptcha-badge');
+            if (badge) badge.classList.add('grecaptcha-hide');
+        }, 2000);
+    });
+</script>
+
+<!-- CAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js?render="></script><style>
+    footer {
+        background-color: var(--color-primary-strong);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 4rem;
+        letter-spacing: 2px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        user-select: none;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer img {
+        width: 50px;
+    }
+
+    footer p {
+        font-size: 50px;
+        font-weight: 900;
+    }
+</style>
+<footer>
+    <p>PepinPHP</p> <img src="public/img/logo.png" alt="PepinPHP Logo" class="logo">
+</footer>
+
+
+</body>
+
+</html>
