@@ -51,7 +51,7 @@ if (!defined('COMPANY_PHONE_LINK'))
 if (!defined('COMPANY_ADDRESS'))
     define('COMPANY_ADDRESS', '');
 if (!defined('COMPANY_SLOGAN'))
-    define('COMPANY_SLOGAN', "");
+    define('COMPANY_SLOGAN', "Framework PHP Maison");
 if (!defined('COMPANY_PRICE_HOUR'))
     define('COMPANY_PRICE_HOUR', "");
 
