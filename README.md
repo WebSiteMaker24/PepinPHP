@@ -51,25 +51,38 @@ Fonctionnalités principales :
 
 ```
 PepinPHPv5
+
 ├─ core
-│  ├─ constantes.php        # Constantes globales
+│ ├─ .env # Configuration environnementale
+│ ├─ Autoload.php # Chargement automatique des classes
+│ ├─ Bootstrap.php # Initialisation de l’application
+│ ├─ Constantes.php # Constantes globales (routes, infos, SMTP...)
+│ ├─ sendmail.php # Envoi d’email avec PHPMailer
+│ ├─ phpmailer/ # Librairie PHPMailer
+│ └─ src
+│ ├─ cache/pages # Cache HTML statique des pages
+│ ├─ control # Contrôleurs
+│ ├─ csrf # Protection CSRF
+│ ├─ envloader # Chargement du .env
+│ ├─ log # Logs (php_errors.log, form-errors.log)
+│ ├─ middleware # Middleware divers
+│ ├─ model # Modèles (accès base de données)
+│ ├─ module # Modules spécifiques (users, newsletter, etc.)
+│ └─ view # Vues (templates, formulaires, navigation...)
 ├─ public_html
-│  ├─ .htaccess             # Règles de réécriture pour la prod
-│  ├─ index.php             # Point d'entrée
-│  └─ public
-│     ├─ css
-│     ├─ js
-│     └─ img
-├─ src
-│  ├─ control
-│  ├─ model
-│  ├─ view
-│  ├─ cache/pages           # Cache HTML statique
-│  └─ log/php_errors.log    # Log d'erreurs PHP
-├─ view/form/contact_form.php   # Template email contact
-├─ sendmail.php                 # Envoi d'email avec PHPMailer
-├─ LICENSE
-└─ .env                        # Config environnementale
+│ ├─ .htaccess # Règles de réécriture URL pour la production
+│ ├─ favicon.ico # Icône du site
+│ ├─ index.php # Point d’entrée, gestion du routage
+│ ├─ licence.txt # Licence du projet
+│ ├─ readme.md # Documentation
+│ ├─ robots.txt # Fichier robots
+│ ├─ sitemap.xml # Plan du site
+│ └─ public
+│ ├─ css # Feuilles de style
+│ ├─ download # Fichiers téléchargeables
+│ ├─ font # Polices
+│ ├─ img # Images (logo, bannières...)
+│ └─ js # Scripts JavaScript
 ```
 
 ---
