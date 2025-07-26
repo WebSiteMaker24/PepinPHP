@@ -14,15 +14,12 @@
         <li>🌐 Structure publique/privée claire (dossier <code>public/</code> et <code>private/</code>)</li>
         <li>🔑 Chargement automatique des variables d'environnement via <code>EnvLoader</code></li>
         <li>📁 Fichier centralisé pour les constantes (liens, URLs, chemins, etc.) pour éviter les duplications</li>
-        <li>📝 Système d’enregistrement des logs d’erreurs pour faciliter le debug</li>
         <li>⚡ Système de cache HTML intégré via <code>startCache()</code> et <code>endCache()</code> dans
             <code>ControlMain</code>
         </li>
         <li>🗂️ Les pages mises en cache sont stockées dans <code>/src/cache/pages/</code></li>
         <li>🧹 Option de purge manuelle du cache pour recharger les pages dynamiquement</li>
-
-        <li>📄 Logger d’erreurs PHP configuré proprement, écrivant dans <code>/src/log/php_errors.log</code></li>
-        <li>🔧 Fonction <code>setupErrorLogging()</code> pour activer le log sans bruit sur le front</li>
+        <li>📄 Logger d’erreurs PHP fonctionne avec <code>setupErrorLogging()</code>, écrivant dans <code>core/src/log/php_errors.log</code></li>
     </ul>
 
     <h2>Navigation et URL</h2>
