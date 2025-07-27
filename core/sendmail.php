@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\SMTP;
 require __DIR__ . '/phpmailer/Exception.php';
 require __DIR__ . '/phpmailer/PHPMailer.php';
 require __DIR__ . '/phpmailer/SMTP.php';
-require __DIR__ . '/constantes.php';
+require __DIR__ . '/Constantes.php';
 
 // Récupération et nettoyage des données POST
 $name = trim($_POST['name'] ?? '');
