@@ -41,7 +41,7 @@ class ControlMain
     <path class="st0" d="M58.15,70.74c-5.2,0.04-9.98,4.75-9.76,9.86c0.28,6.36,5.85,9.93,9.93,9.74c5.41-0.25,9.65-4.44,9.61-9.91
     C67.9,74.99,63.55,70.69,58.15,70.74z" />
 </svg>
-ac' . htmlspecialchars($message) . '
+' . htmlspecialchars($message) . '
 </div>';
         }
 
@@ -81,7 +81,7 @@ ac' . htmlspecialchars($message) . '
             $ip = $_SERVER['REMOTE_ADDR'] ?? 'IP inconnue';
             $date = date('Y-m-d H:i:s');
             error_log("[$date] Erreur [$severity] depuis $ip : $message dans $file à la ligne $line");
-            return false; // Pour laisser PHP gérer aussi l’erreur normalement
+            return false;
         });
 
         set_exception_handler(function ($exception) {
