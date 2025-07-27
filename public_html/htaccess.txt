@@ -6,7 +6,7 @@ RewriteRule ^(.*)$ https://votre_domaine_ici.fr/$1 [R=301,L]
 
 # 2. Rediriger HTTP vers HTTPS (sur domaine non-www)
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^aidedomicilecherbourg\.fr$ [NC]
+RewriteCond %{HTTP_HOST} ^votre_domaine_ici\.fr$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # 3. Suppression extension PHP
