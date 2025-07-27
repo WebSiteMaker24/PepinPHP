@@ -13,7 +13,7 @@ class ControlMain
         if (isset($_SESSION["message_success"])) {
             $message = $_SESSION["message_success"];
             unset($_SESSION["message_success"]);
-            return '<div class="message-flash success"><svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            return '<div class="message-flash success"><svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" style="width: 18px;" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
     y="0px" viewBox="0 0 116.3 116.1" style="enable-background:new 0 0 116.3 116.1;" xml:space="preserve">
     <path class="st0" d="M58.62,0C28.25-0.24,0.08,25.41,0,57.98c-0.08,33.05,28.28,59.33,57.86,58.05
     c29.54,1.55,58.45-24.27,58.44-57.86C116.29,24.48,87.46,0.23,58.62,0z M57.59,104.84c-25.94-0.61-46.34-20.77-46.33-46.88
@@ -30,7 +30,7 @@ class ControlMain
             $message = $_SESSION["message_error"];
             unset($_SESSION["message_error"]);
             return '<div class="message-flash error">
-    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" style="width: 18px;" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
     y="0px" viewBox="0 0 116.48 115.98" style="enable-background:new 0 0 116.48 115.98;" xml:space="preserve">
     <path class="st0" d="M58.79,0.09C28.75-1.72-0.06,24.93,0,58.09c0.06,33.17,28.82,59.37,58.23,57.82
     c29.41,1.49,58.22-24.38,58.25-57.82C116.52,24.43,87.69-1.13,58.79,0.09z M58.1,104.83c-24.16,1.13-46.86-20.67-46.79-46.89
@@ -49,7 +49,7 @@ ac' . htmlspecialchars($message) . '
             $message = $_SESSION["message_info"];
             unset($_SESSION["message_info"]);
             return '<div class="message-flash info">
-    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" style="width: 18px;" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 116.29 116.09" style="enable-background:new 0 0 116.29 116.09;"
         xml:space="preserve">
         <path class="st0" d="M58.23,0.06C28.31-1.38,0.08,25.06,0,57.74c-0.08,33.04,28.28,58.22,57.86,58.35
