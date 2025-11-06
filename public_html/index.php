@@ -13,8 +13,8 @@ ControlMain::setupErrorLogging();
 
 $app = new Bootstrap();
 
-$cache_file = ControlMain::startCache();
+// $cache_file = ControlMain::startCache(); Gestion du cache Start
 
 $app->run();
 
-ControlMain::endCache($cache_file);
+// ControlMain::endCache($cache_file); Gestion du cache End
