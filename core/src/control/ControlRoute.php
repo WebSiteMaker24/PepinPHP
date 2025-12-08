@@ -15,11 +15,12 @@ class ControlRoute
     public function route(): void
     {
         $basePath = dirname(__DIR__, 2);
-        $page = "";
-        $keyword = "";
-        $description = "";
-        $canonical = "";
-        $title = "";
+        $robot = ""; // Si la page doit être suivis ou non par les navigateurs
+        $jsonld = ""; // Le chemin vers le Jsonld de la page
+        $description = ""; // La description meta de la page
+        $title = ""; // Le titre meta de la page
+        $canonical = ""; // L'url complète de la page
+        $page = ""; // Chemin vers le fichier qui contient la vue de la page
 
         // Liste des pages autorisées
         $routes_valides = ["", "accueil", "service", "contact", "404"];
@@ -31,10 +32,10 @@ class ControlRoute
             case "":
                 $url = $this->_url;
                 $robot = "index, follow";
-                $description = "";
-                $canonical = URL_DOMAINE . "/";
-                $title = COMPANY_NAME . " | " . COMPANY_SLOGAN;
                 $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
+                $description = "";
+                $title = COMPANY_NAME . " | " . COMPANY_SLOGAN;
+                $canonical = URL_DOMAINE . "/";
                 $page = $this->_navigation . "accueil" . $this->_extension;
                 break;
 
@@ -42,19 +43,19 @@ class ControlRoute
             case "contact":
                 $url = $this->_url;
                 $robot = "index, follow";
+                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $description = "";
                 $title = "Contactez nous | " . COMPANY_NAME;
                 $canonical = URL_DOMAINE . "/contact";
-                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $page = $this->_navigation . "contact" . $this->_extension;
                 break;
             case "service":
                 $url = $this->_url;
                 $robot = "index, follow";
+                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $description = "";
                 $title = "Nos services | " . COMPANY_NAME;
                 $canonical = URL_DOMAINE . "/service";
-                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $page = $this->_navigation . "service" . $this->_extension;
                 break;
 
@@ -68,10 +69,10 @@ class ControlRoute
             default:
                 $url = $this->_url;
                 $robot = "index, follow";
+                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $description = "";
                 $title = COMPANY_NAME . " | " . COMPANY_SLOGAN;
                 $canonical = URL_DOMAINE . "/";
-                $jsonld = $this->_jsonld . "jsonld-navigation" . $this->_extension;
                 $page = $this->_navigation . "accueil" . $this->_extension;
                 break;
         }
@@ -91,4 +92,5 @@ class ControlRoute
         $ip_client = $_SERVER['REMOTE_ADDR'];
         return in_array($ip_client, $ips_autorisees);
     }
+
 }
