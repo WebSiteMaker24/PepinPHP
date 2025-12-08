@@ -37,14 +37,135 @@
 
     <title><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?></title>
 
-    <link rel="stylesheet" href="public/css/style.css">
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <script type="application/ld+json">
     <?= json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
     </script>
 
+    <style>
+        :root {
+            --color-primary: #009C86;
+            --color-primary2: #00aaff;
+            --color-white: #fff;
+            --color-white2: #fdf5f5ff;
+            --color-primary-strong: #1B2E35;
+            --color-black: #111;
+            --padding: 15px 20px;
+            --margin-top: 25px;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("../font/Poppins-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("../font/Poppins-Light.ttf") format("truetype");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("../font/Poppins-Black.ttf") format("truetype");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            list-style-type: none;
+            font-family: "Poppins", sans-serif;
+            transition: 0.3s ease;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input,
+        a,
+        button {
+            cursor: pointer;
+        }
+
+        a,
+        p {
+            color: #1B2E35;
+        }
+
+        .btn {
+            display: inline-block;
+            background: sandybrown;
+            border-radius: 5px;
+            color: var(--color-black);
+            padding: 15px 20px;
+            box-shadow: 1px 1px 5px var(--color-black);
+            width: fit-content;
+        }
+
+        /* GESTION DES MESSAGES */
+        .message-flash {
+            width: 100%;
+            margin: 10px auto;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Icône à gauche */
+        .message-flash svg {
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        /* Couleurs selon le type de message */
+        .message-flash.success {
+            background-color: #4CAF50;
+            /* vert */
+        }
+
+        .message-flash.error {
+            background-color: #F44336;
+            /* rouge */
+        }
+
+        .message-flash.info {
+            background-color: #2196F3;
+            /* bleu */
+        }
+
+        .message-flash.success svg {
+            fill: #d0f0d0;
+        }
+
+        .message-flash.error svg {
+            fill: #ffd6d6;
+        }
+
+        .message-flash.info isvg {
+            fill: #d0e7ff;
+        }
+    </style>
+    
 </head>
+
 
 <body>
