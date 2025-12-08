@@ -23,7 +23,8 @@ RewriteRule ^contact$ ?url=contact [NC,L]
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
 # Protection contre le clickjacking
-Header always set X-Frame-Options "SAMEORIGIN"
+Header always unset X-Frame-Options
+Header always set Content-Security-Policy "frame-ancestors https://websitemaker.fr"
 
 # Protection contre type MIME sniffing
 Header set X-Content-Type-Options "nosniff"
@@ -89,5 +90,6 @@ Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
+
 
 
