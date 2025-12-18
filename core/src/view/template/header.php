@@ -39,6 +39,8 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <link rel="stylesheet" href="public/css/style.css">
+
     <script type="application/ld+json">
     <?= json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
     </script>
@@ -164,7 +166,7 @@
             fill: #d0e7ff;
         }
     </style>
-    
+
 </head>
 
 
