@@ -134,7 +134,7 @@
 
         /* Icône à gauche */
         .message-flash svg {
-            font-size: 18px;
+            width: 18px;
             margin-right: 5px;
         }
 
@@ -162,7 +162,7 @@
             fill: #ffd6d6;
         }
 
-        .message-flash.info isvg {
+        .message-flash.info svg {
             fill: #d0e7ff;
         }
     </style>
@@ -171,4 +171,5 @@
 
 
 <body>
+
 
