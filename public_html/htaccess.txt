@@ -24,7 +24,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 # Protection contre le clickjacking
 Header always unset X-Frame-Options
-Header always set Content-Security-Policy "frame-ancestors https://websitemaker.fr"
+Header always set Content-Security-Policy "frame-ancestors https://votre_domaine_ici.fr/"
 
 # Protection contre type MIME sniffing
 Header set X-Content-Type-Options "nosniff"
@@ -90,6 +90,7 @@ Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
+
 
 
 
