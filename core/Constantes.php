@@ -31,9 +31,9 @@ if (!defined('URL_INSTAGRAM'))
 
 // Domaine
 if (!defined('URL_DOMAINE'))
-    define('URL_DOMAINE', 'https://');
+    define('URL_DOMAINE', 'https://votre_domaine.fr');
 if (!defined('URL_DOMAINE_TXT'))
-    define('URL_DOMAINE_TXT', '');
+    define('URL_DOMAINE_TXT', 'votre_domaine.fr');
 
 
 // Information entreprise
@@ -74,3 +74,4 @@ if (!defined('IMG_LOGO'))
     define('IMG_LOGO', 'public/img/logo.png');
 if (!defined('IMG_OG'))
     define('IMG_OG', 'public/img/og_img.webp');
+
