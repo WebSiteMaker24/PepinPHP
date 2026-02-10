@@ -8,7 +8,6 @@ class Middleware
     {
         self::activeSession();
         self::antiVolSession();
-        self::sanitizeGlobals();
     }
 
     // Nettoie les données d'entrée (trim + strip_tags)
@@ -19,19 +18,7 @@ class Middleware
         }
 
         // Supprime les balises HTML mais garde les caractères spéciaux tels quels
-        return strip_tags(trim($data));
-    }
-
-    // Méthode à appeler au démarrage pour nettoyer les superglobales
-    public static function sanitizeGlobals()
-    {
-        $_GET = self::sanitize($_GET);
-        $_POST = self::sanitize($_POST);
-        $_COOKIE = self::sanitize($_COOKIE);
-
-        if (session_status() === PHP_SESSION_ACTIVE) {
-            $_SESSION = self::sanitize($_SESSION);
-        }
+        return trim($data);
     }
 
     // Démarrage sécurisé de la session
