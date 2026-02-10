@@ -33,20 +33,6 @@ class Middleware
         }
     }
 
-    // Définition du cookie de session avec sécurité renforcée
-    public static function activeCookie()
-    {
-        session_name('SESSION_ID');
-        session_set_cookie_params([
-            'lifetime' => 0,
-            'path' => '/',
-            'domain' => '',
-            'secure' => isset($_SERVER['HTTPS']),
-            'httponly' => true,
-            'samesite' => 'Strict'
-        ]);
-    }
-
     // Protection contre le vol de session
     public static function antiVolSession($force = false)
     {
@@ -71,26 +57,5 @@ class Middleware
             }
         }
     }
-
-    // Sécurise le cookie contre le vol (optionnel)
-    public static function antiVolCookie($force = false)
-    {
-        if (!isset($_COOKIE['SESSION_ID']) || $force) {
-            $cookieParams = [
-                'lifetime' => 0,
-                'path' => '/',
-                'domain' => '',
-                'secure' => isset($_SERVER['HTTPS']),
-                'httponly' => true,
-                'samesite' => 'Strict'
-            ];
-
-            setcookie('SESSION_ID', session_id(), time() + 3600, '/', '', $cookieParams['secure'], $cookieParams['httponly']);
-            session_regenerate_id(true);
-        }
-
-        if (!isset($_COOKIE['initiated']) || $force) {
-            $_COOKIE['initiated'] = time();
-        }
-    }
 }
+
