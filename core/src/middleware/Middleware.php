@@ -33,7 +33,7 @@ class Middleware
         }
     }
 
-    // Nettoyage des données à l'affichage
+    // Nettoyage des données à l'affichage : \middleware\Middleware::e($userInput)
     public static function e($value) {
         return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     }
@@ -63,6 +63,7 @@ class Middleware
         }
     }
 }
+
 
 
 
