@@ -33,6 +33,11 @@ class Middleware
         }
     }
 
+    // Nettoyage des données à l'affichage
+    function e($value) {
+    return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
     // Protection contre le vol de session
     public static function antiVolSession($force = false)
     {
@@ -58,4 +63,5 @@ class Middleware
         }
     }
 }
+
 
