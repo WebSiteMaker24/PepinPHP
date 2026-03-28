@@ -1,6 +1,6 @@
 <?php
 
-// Bootstrap.php
+// Bootload.php
 
 use envloader\EnvLoader;
 use control\ControlForm;
