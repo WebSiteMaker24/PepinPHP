@@ -7,7 +7,7 @@ use control\ControlForm;
 use middleware\Middleware;
 use csrf\CSRFProtection;
 use module\newsletter\ControlNewsletter;
-class Bootstrap
+class Bootload
 {
     public function run(): void
     {
