@@ -11,7 +11,7 @@ require_once $path . "Bootload.php";
 
 ControlMain::setupErrorLogging();
 
-$app = new Bootstrap();
+$app = new Bootload();
 
 // $cache_file = ControlMain::startCache(); Gestion du cache Start
 
