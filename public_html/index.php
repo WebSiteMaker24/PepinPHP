@@ -7,7 +7,7 @@ use control\ControlMain;
 $path = __DIR__ . "/../core/";
 require_once $path . "Constantes.php";
 require_once $path . "Autoload.php";
-require_once $path . "Bootstrap.php";
+require_once $path . "Bootload.php";
 
 ControlMain::setupErrorLogging();
 
